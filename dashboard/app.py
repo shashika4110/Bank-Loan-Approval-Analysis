@@ -192,7 +192,7 @@ with tab_analytics:
         st.markdown(f"""
         <div class="metric-card" style="border-left-color: #F59E0B;">
             <div class="metric-title">Average Loan Amount</div>
-            <div class="metric-value">${avg_loan:.1f}K</div>
+            <div class="metric-value">Rs{avg_loan:.1f}K</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -200,7 +200,7 @@ with tab_analytics:
         st.markdown(f"""
         <div class="metric-card" style="border-left-color: #8B5CF6;">
             <div class="metric-title">Avg Household Income</div>
-            <div class="metric-value">${avg_income:,.0f}</div>
+            <div class="metric-value">Rs {avg_income:,.0f}</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -236,7 +236,7 @@ with tab_analytics:
                 color='Loan_Status',
                 color_discrete_map={'Y': '#10B981', 'N': '#EF4444'},
                 nbins=40,
-                labels={'Total_Income': 'Annual Total Income ($)', 'count': 'Number of Applicants'},
+                labels={'Total_Income': 'Annual Total Income (Rs)', 'count': 'Number of Applicants'},
                 marginal="box"
             )
             fig_hist.update_layout(
@@ -326,9 +326,9 @@ with tab_prediction:
                 
             with col_f2:
                 st.subheader("Financial Details")
-                app_income_input = st.number_input("Applicant's Annual/Monthly Base Income ($)", min_value=0, value=5000, step=500, help="Standardized to match the dataset units (e.g. monthly).")
-                coapp_income_input = st.number_input("Co-Applicant's Annual/Monthly Income ($)", min_value=0, value=0, step=500)
-                loan_amount_input = st.number_input("Requested Loan Amount (in Thousands, e.g. 150 = $150,000)", min_value=1, value=120, step=10)
+                app_income_input = st.number_input("Applicant's Annual/Monthly Base Income (Rs)", min_value=0, value=5000, step=500, help="Standardized to match the dataset units (e.g. monthly).")
+                coapp_income_input = st.number_input("Co-Applicant's Annual/Monthly Income (Rs)", min_value=0, value=0, step=500)
+                loan_amount_input = st.number_input("Requested Loan Amount (in Thousands, e.g. 150 = Rs150,000)", min_value=1, value=120, step=10)
                 loan_term_input = st.number_input("Loan Amount Term (in Months, e.g. 360 = 30 Years)", min_value=12, value=360, step=12)
                 credit_history_input = st.selectbox("Credit History Guidelines Met?", ['Yes (Good Credit)', 'No (Bad Credit)'])
                 
