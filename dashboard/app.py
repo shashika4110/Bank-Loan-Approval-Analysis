@@ -219,7 +219,7 @@ with tab_analytics:
                 filtered_df, 
                 names='Loan_Status', 
                 color='Loan_Status',
-                color_map={'Y': '#10B981', 'N': '#EF4444'},
+                color_discrete_map={'Y': '#10B981', 'N': '#EF4444'},
                 hole=0.4,
                 labels={'Loan_Status': 'Status'}
             )
@@ -234,7 +234,7 @@ with tab_analytics:
                 filtered_df, 
                 x='Total_Income', 
                 color='Loan_Status',
-                color_map={'Y': '#10B981', 'N': '#EF4444'},
+                color_discrete_map={'Y': '#10B981', 'N': '#EF4444'},
                 nbins=40,
                 labels={'Total_Income': 'Annual Total Income ($)', 'count': 'Number of Applicants'},
                 marginal="box"
